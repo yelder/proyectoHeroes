@@ -1,0 +1,8 @@
+<div class="card-header bg-dark text-light">{{heroe.publisher}}</div>
+<img [src]="heroe | imagen" class="card-img-top" style="cursor: pointer;" [routerLink]="['/', heroe.id]">
+<div class="card-body">
+  <h3><strong>{{heroe.superhero}}</strong></h3>
+  <button class="btn btn-outline-primary mt-3 mr-2" [routerLink]="['/', heroe.id]">Leer mas</button>
+  <button class="btn btn-outline-danger mt-3" data-toggle="modal" data-target="#editarHeroe"
+    (click)="editHeroe()">Editar</button>
+</div>

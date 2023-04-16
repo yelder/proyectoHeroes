@@ -1,0 +1,29 @@
+<h2>Heroes</h2>
+
+<div class="d-flex justify-content-center" *ngIf="!heroe; else divHeroe">
+  <div class="spinner-border text-primary spin" role="status">
+    <span clas="sr-only"></span>
+  </div>
+</div>
+
+<ng-template #divHeroe>
+  <hr />
+
+  <div class="row">
+    <div class="col-4">
+      <img [src]="heroe | imagen" class="img-fluid img-thumbnail" />
+    </div>
+
+    <div class="col-8">
+      <h2><strong>Heroe:</strong> {{ heroe.superhero }}</h2>
+      <p><strong>Publicado:</strong> {{ heroe.publisher }}</p>
+      <p><strong>Primera aparición:</strong> {{ heroe.first_appearance }}</p>
+      <p><strong>Personaje:</strong> {{ heroe.characters }}</p>
+      <p><strong>Descripción:</strong> {{ heroe.description }}</p>
+
+      <button class="btn btn-outline-danger btn-xs" routerLink="/">
+        Regresar
+      </button>
+    </div>
+  </div>
+</ng-template>

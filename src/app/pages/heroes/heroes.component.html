@@ -1,0 +1,81 @@
+<h1>Heroes</h1>
+<hr />
+<div class="card-columns">
+  <div class="card bg-dark text-light" *ngFor="let heroe of heroes">
+    <app-tarjeta-heroe [heroe]="heroe" (editarHeroe)="updateHeroe($event)"></app-tarjeta-heroe>
+  </div>
+</div>
+
+<!-- Modal Editar Heroe -->
+<div class="modal fade" id="editarHeroe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title" id="exampleModalLabel">
+          <i class="fa fa-plus" aria-hidden="true" data-toggle="modal" data-target="#editarHeroe"></i>
+          Editar Heroe
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-8">
+            <form>
+              <div class="form-group">
+                <label>SuperHeroe</label>
+                <input type="text" [(ngModel)]="heroe.superhero" class="form-control" name="superhero" required />
+              </div>
+              <div class="form-group">
+                <label>Primera apararición</label>
+                <input type="text" [(ngModel)]="heroe.first_appearance" class="form-control" name="first_appearance"
+                  required />
+              </div>
+
+              <div class="form-group">
+                <label>Creador</label>
+                <select class="form-control" [(ngModel)]="heroe.publisher" name="publisher">
+                  <option value="">{{ heroePublisher }}</option>
+                  <option *ngFor="let publi of publishers" value="{{ publi.id }}">
+                    {{ publi.desc }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Personaje</label>
+                <input type="text" [(ngModel)]="heroe.characters" class="form-control" name="characters" required />
+              </div>
+
+              <div class="form-group">
+                <label>Descripción</label>
+                <textarea class="form-control" [(ngModel)]="heroe.description" rows="4" name="description"
+                  required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>URL imagen</label>
+                <input type="url" class="form-control" [(ngModel)]="heroe.alt_img" name="alt_img" required />
+              </div>
+
+              <button type="button" class="btn btn-primary" (click)="guardar()">
+                Guardar
+              </button>
+            </form>
+          </div>
+
+          <div class="col-4">
+            <img [src]="heroe | imagen" class="img-responsive img-thumbnail" />
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer bg-dark">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

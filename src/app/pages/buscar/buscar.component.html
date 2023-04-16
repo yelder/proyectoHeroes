@@ -1,0 +1,14 @@
+<h2>Buscar Heroes</h2>
+<hr />
+
+<div class="row">
+  <div class="col-12" *ngIf="heroes.length == 0">
+    <div class="alert alert-info">No existe resultados en la busqueda...</div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <div class="card bg-dark text-light" *ngFor="let heroe of heroes">
+    <app-tarjeta-heroe [heroe]="heroe"></app-tarjeta-heroe>
+  </div>
+</div>
