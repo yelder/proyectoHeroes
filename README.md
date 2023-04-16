@@ -1,10 +1,9 @@
 # Proyecto Heroes
-
+TO RUN THIS PROJECT A BACKEND (JSON DATABASE) HAS BEEN CREATED WITH JSON.SERVER SO FIRST YOU HAVE TO USE NPM RUN SERVER AND THEN NG SERVE
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To run this project a backend (json database) has been created with json.server so first you have to use npm run server and then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
